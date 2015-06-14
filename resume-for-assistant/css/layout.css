@@ -13,9 +13,6 @@ a {
   color: #000;
   text-decoration: none;
 }
-a:hover {
-  background-color: #eee;
-}
 a:focus {
   color: #000;
   font-weight: bold;
@@ -66,24 +63,36 @@ a:focus {
 /* line 65, ../sass/example.scss */
 .section:nth-child(6n) {
   height: 400px;
-  background-color: #7affe6;
+  background-color: #05a8bd;
 }
 .navbar {
   position: fixed;
   right: 0px;
-  top: 100px;
+  top: 50%;
+  margin-top: -180px;
+  text-align: right;
 }
 .navbar li {
+  float: right;
+  clear: right;
   width: 90px;
+  transition: width 1s;
+  -moz-transition: width 1s;
+  /* Firefox 4 */
+  -webkit-transition: width 1s;
+  /* Safari and Chrome */
+  -o-transition: width 1s;
+  /* Opera */
+}
+.navbar li:hover {
+  width: 200px;
 }
 .navbar li a {
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
   text-decoration: none;
   display: block;
-  padding: 30px 10px;
-}
-.navbar li a.act {
-  color: green;
-  font-size: bold;
+  padding: 20px 10px;
 }
 .title {
   text-align: center;
@@ -91,7 +100,7 @@ a:focus {
 }
 .title h1 {
   margin: 0;
-  color: #F5FF9C;
+  color: #f5ff9c;
   width: 500px;
   position: absolute;
   top: 40%;
@@ -121,6 +130,9 @@ a:focus {
 .title-color {
   background-color: #ff708f;
 }
+.intro {
+  color: #076d80;
+}
 .intro-color {
   background-color: #e89d5d;
 }
@@ -141,14 +153,17 @@ a:focus {
 .intro-desc .douban {
   padding: 12px;
   background: url(../img/douban.png);
+  margin-right: 20px;
 }
 .intro-desc i {
   font-size: 24px;
 }
 .intro-desc .desc-a {
   display: inline-block;
-  margin-right: 10px;
   vertical-align: middle;
+}
+.intro-body {
+  color: #303030;
 }
 .intro-body .rightArea {
   border-left: dashed 1px #897f8a;
@@ -158,6 +173,7 @@ a:focus {
   margin-right: -10px;
 }
 .intro-body .icon-circle i {
+  color: #076d80;
   font-size: 18px;
 }
 .intro-body .col-left {
@@ -172,6 +188,22 @@ a:focus {
 }
 .reason-color {
   background-color: #ffe33e;
+}
+.reason-title {
+  margin-top: 15px;
+  line-height: 30px;
+}
+.reason-title .reason-number {
+  font-size: 30px;
+}
+.reason-content-con {
+  margin-top: 5%;
+}
+.reason-content-box {
+  margin-bottom: 30px;
+}
+.reason-other li {
+  margin-bottom: 3%;
 }
 .strength-color {
   background-color: #7ae856;
@@ -188,8 +220,11 @@ a:focus {
 .desc .movie-text {
   color: #2694e3;
 }
+.photo h2 {
+  color: #fafceb;
+}
 .photo-color {
-  background-color: #7affe6;
+  background-color: #05a8bd;
 }
 .photo-gallery img {
   width: 300px;

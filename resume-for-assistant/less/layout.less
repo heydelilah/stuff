@@ -9,10 +9,7 @@ li{
 a {
   color: #000;
   text-decoration: none;
-}
 
-a:hover{
-	background-color: #eee;
 }
 a:focus {
   color: #000;
@@ -48,9 +45,18 @@ a:focus {
 @reason-color: #FFE33E; 
 @strength-color: #7AE856; 
 @desc-color: #fff; 
-@photo-color: #7AFFE6;
+@photo-color: #05A8BD;
 @more-color: #6E74F5;
 
+@title-text: #F5FF9C; 
+@intro-text: #076D80; 
+@reason-text: #FFE33E; 
+@strength-text: #7AE856; 
+@desc-text: #fff; 
+@photo-text: #FAFCEB;
+@more-text: #6E74F5;
+
+@grey: #303030;
 @book-color: #BA6D5B;
 @movie-color: #2694e3;
 
@@ -99,19 +105,30 @@ a:focus {
 .navbar{
 	position: fixed;
 	right: 0px;
-	top: 100px;
-
-	li{
-		width: 90px;
-
+	top: 50%;
+    margin-top: -180px;
+    text-align: right;
+    li{
+        float: right;
+        clear: right;
+        width: 90px;
+        
+        transition:width 1s;
+        -moz-transition:width 1s; /* Firefox 4 */
+        -webkit-transition:width 1s; /* Safari and Chrome */
+        -o-transition:width 1s; /* Opera */
+        
+        &:hover{
+            width: 200px;
+        }
 		a{
+            border-top-left-radius:2em;
+            // border-top-right-radius:2em;
+            // border-bottom-right-radius:2em;
+            border-bottom-left-radius:2em;
 			text-decoration: none;
 			display: block;
-  			padding: 30px 10px;
-		}
-		a.act{
-			color: green;
-			font-size: bold;
+  			padding: 20px 10px;
 		}
 	}
 }
@@ -123,7 +140,7 @@ a:focus {
 	position: relative;
 	h1{
 		margin: 0;
-		color: #F5FF9C;
+		color: @title-text;
 		width: 500px;
 		position: absolute;
 		top: 40%;
@@ -160,6 +177,8 @@ a:focus {
 	}
 }
 .intro{
+    color: @intro-text;
+
 	&-color{
 		background-color: @intro-color;
 	} 
@@ -181,20 +200,20 @@ a:focus {
 		.douban{
 			padding: 12px;
 			background: url(../img/douban.png);
-		}
-		i{
-
-			font-size: 24px;
-		}
-		.desc-a{
-			display: inline-block;
-			margin-right: 10px;
+			margin-right: 20px;
+        }
+        i{
+            font-size: 24px;
+        }
+        .desc-a{
+            display: inline-block;
 			vertical-align: middle;
 		}
 
 	}
 
 	&-body{
+        color: @grey;
 		.rightArea{
 			border-left: dashed 1px #897f8a;
 			padding-bottom: 47px;
@@ -205,6 +224,7 @@ a:focus {
 			// padding: 30px 0;
 			// background: url(../img/circle.png) no-repeat 0 0 #f8f7f8;
 			i{
+                color: @intro-text;
 				font-size: 18px;
 			}
 		}
@@ -226,6 +246,26 @@ a:focus {
 	&-color{
 		background-color: @reason-color;
 	}
+    &-title{
+        margin-top: 15px;
+        line-height: 30px;
+       .reason-number{
+            font-size: 30px;
+       } 
+    }
+    &-content{
+        &-con{
+            margin-top: 5%;
+        }
+        &-box{
+            margin-bottom: 30px;
+        }
+    }
+    &-other{
+        li{
+            margin-bottom: 3%;
+        }
+    }
 }
 .strength{
 	&-color{
@@ -248,6 +288,9 @@ a:focus {
 
 }
 .photo{
+    h2{
+        color: @photo-text;
+    }
 	&-color{
 		background-color: @photo-color;
 	}
