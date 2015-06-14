@@ -192,9 +192,8 @@
 			}
 		);
 
-		$('.title a').on('click', 
+		$('.tips a').on('click', 
 			function(e){
-				console.log(e)
 				currentHash = e.target.hash;
 				scrollToHash();
 			}

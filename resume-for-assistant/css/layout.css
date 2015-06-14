@@ -35,6 +35,9 @@ a:focus {
   margin-bottom: 30px;
   text-align: center;
 }
+.hide {
+  display: none;
+}
 /* line 40, ../sass/example.scss */
 .section:nth-child(6n+1) {
   height: 700px;
@@ -58,12 +61,12 @@ a:focus {
 /* line 60, ../sass/example.scss */
 .section:nth-child(6n+5) {
   height: 1500px;
-  background-color: #ffffff;
+  background-color: #05a8bd;
 }
 /* line 65, ../sass/example.scss */
 .section:nth-child(6n) {
   height: 400px;
-  background-color: #05a8bd;
+  background-color: #ff8370;
 }
 .navbar {
   position: fixed;
@@ -94,11 +97,16 @@ a:focus {
   display: block;
   padding: 20px 10px;
 }
-.title {
+.navbar li i {
+  font-size: 30px;
+}
+.title,
+.end {
   text-align: center;
   position: relative;
 }
-.title h1 {
+.title h1,
+.end h1 {
   margin: 0;
   color: #f5ff9c;
   width: 500px;
@@ -107,7 +115,8 @@ a:focus {
   left: 50%;
   margin-left: -250px;
 }
-.title .tips {
+.title .tips,
+.end .tips {
   color: #FCE0E0;
   width: 80px;
   position: absolute;
@@ -115,23 +124,27 @@ a:focus {
   left: 50%;
   margin-left: -40px;
 }
-.title .tips-a {
+.title .tips-a,
+.end .tips-a {
   color: #FCE0E0;
 }
-.title .tips-a:hover {
+.title .tips-a:hover,
+.end .tips-a:hover {
   background: none;
   text-decoration: none;
 }
-.title .tips-a:focus {
+.title .tips-a:focus,
+.end .tips-a:focus {
   color: #FCE0E0;
   background: none;
   text-decoration: none;
 }
-.title-color {
+.title-color,
+.end-color {
   background-color: #ff708f;
 }
 .intro {
-  color: #076d80;
+  color: #b95806;
 }
 .intro-color {
   background-color: #e89d5d;
@@ -173,7 +186,7 @@ a:focus {
   margin-right: -10px;
 }
 .intro-body .icon-circle i {
-  color: #076d80;
+  color: #b95806;
   font-size: 18px;
 }
 .intro-body .col-left {
@@ -186,15 +199,11 @@ a:focus {
   width: 200px;
   display: inline-block;
 }
+.reason h2 {
+  color: #7b6e1e;
+}
 .reason-color {
   background-color: #ffe33e;
-}
-.reason-title {
-  margin-top: 15px;
-  line-height: 30px;
-}
-.reason-title .reason-number {
-  font-size: 30px;
 }
 .reason-content-con {
   margin-top: 5%;
@@ -202,35 +211,59 @@ a:focus {
 .reason-content-box {
   margin-bottom: 30px;
 }
-.reason-other li {
-  margin-bottom: 3%;
+.reason-content-box span {
+  font-weight: bold;
+  color: #7b6e1e;
+}
+.strength h2 {
+  color: #0c731b;
+}
+.strength-title {
+  margin-top: 15px;
+  line-height: 30px;
+}
+.strength-title .strength-number {
+  font-size: 30px;
 }
 .strength-color {
   background-color: #7ae856;
 }
-.desc-color {
-  background-color: #ffffff;
+.strength-other li {
+  margin-bottom: 3%;
 }
-.desc .icons .color-book {
-  background: #ba6d5b;
+.desc h2 {
+  color: #9ff0fb;
+}
+.desc-color {
+  background-color: #05a8bd;
+}
+.desc .spider .middle {
+  background-color: #05a8bd;
+}
+.desc .spider .icons .icon {
+  background-color: #086fb9;
+  border: 2px solid #05a8bd;
+}
+.desc .spider .icons .color-book {
+  background-color: #ce5c9b;
 }
 .desc .book-text {
-  color: #ba6d5b;
+  color: #ce5c9b;
 }
 .desc .movie-text {
-  color: #2694e3;
+  color: #086fb9;
 }
 .photo h2 {
-  color: #fafceb;
+  color: #bc5127;
 }
 .photo-color {
-  background-color: #05a8bd;
+  background-color: #ff8370;
 }
 .photo-gallery img {
   width: 300px;
 }
-.more-color {
-  background-color: #6e74f5;
+.end-color {
+  background-color: #ff708f;
 }
 /*---------------------------------------------------------------------------------
  13. Responsive style

@@ -39,26 +39,28 @@ a:focus {
 		text-align: center;
 	}
 }
-
+.hide{
+    display: none;
+}
 @title-color: #FF708F; 
 @intro-color: #E89D5D; 
 @reason-color: #FFE33E; 
 @strength-color: #7AE856; 
-@desc-color: #fff; 
-@photo-color: #05A8BD;
-@more-color: #6E74F5;
+@desc-color: #05A8BD; 
+@photo-color: #FF8370;
+@end-color: #FF708F;
 
 @title-text: #F5FF9C; 
-@intro-text: #076D80; 
-@reason-text: #FFE33E; 
-@strength-text: #7AE856; 
-@desc-text: #fff; 
-@photo-text: #FAFCEB;
-@more-text: #6E74F5;
+@intro-text: #B95806; 
+@reason-text: #7B6E1E; 
+@strength-text: #0C731B; 
+@desc-text: #9FF0FB; 
+@photo-text: #BC5127;
+@end-text: #6E74F5;
 
 @grey: #303030;
-@book-color: #BA6D5B;
-@movie-color: #2694e3;
+@book-color: #CE5C9B;
+@movie-color: #086FB9;
 
 /* line 40, ../sass/example.scss */
 .section:nth-child(6n+1) {
@@ -130,12 +132,15 @@ a:focus {
 			display: block;
   			padding: 20px 10px;
 		}
+        i{
+            font-size: 30px;
+        }
 	}
 }
 
 
 
-.title{
+.title, .end{
 	text-align: center;
 	position: relative;
 	h1{
@@ -221,8 +226,6 @@ a:focus {
 		}
 		.icon-circle{
 			margin-right: -10px;
-			// padding: 30px 0;
-			// background: url(../img/circle.png) no-repeat 0 0 #f8f7f8;
 			i{
                 color: @intro-text;
 				font-size: 18px;
@@ -243,23 +246,38 @@ a:focus {
 	}
 }
 .reason{
+    h2{
+        color: @reason-text;
+    }
 	&-color{
 		background-color: @reason-color;
 	}
-    &-title{
-        margin-top: 15px;
-        line-height: 30px;
-       .reason-number{
-            font-size: 30px;
-       } 
-    }
     &-content{
         &-con{
             margin-top: 5%;
         }
         &-box{
             margin-bottom: 30px;
+            span{
+                font-weight: bold;
+                color: @reason-text;
+            }
         }
+    }
+}
+.strength{
+    h2{
+        color: @strength-text;
+    }
+    &-title{
+        margin-top: 15px;
+        line-height: 30px;
+       .strength-number{
+            font-size: 30px;
+       } 
+    }
+    &-color{
+        background-color: @strength-color;
     }
     &-other{
         li{
@@ -267,24 +285,30 @@ a:focus {
         }
     }
 }
-.strength{
-	&-color{
-		background-color: @strength-color;
-	}
-}
 .desc{
+    h2{
+        color: @desc-text;
+    }
+
 	&-color{
 		background-color: @desc-color;
 	}
-	.icons .color-book{ 
-		background: @book-color;
-	}
-	.book-text{
-		color: @book-color
-	}
-	.movie-text{
-		color: @movie-color;
-	}
+    .spider .middle{
+        background-color: @desc-color;
+    }
+    .spider .icons .icon {
+        background-color: @movie-color;
+        border: 2px solid @desc-color;
+    }
+    .spider .icons .color-book{ 
+        background-color: @book-color;
+    }
+    .book-text{
+        color: @book-color
+    }
+    .movie-text{
+        color: @movie-color;
+    }
 }
 .photo{
     h2{
@@ -306,9 +330,9 @@ a:focus {
 		// }
 	}
 }
-.more{
+.end{
 	&-color{
-		background-color: @more-color;
+		background-color: @end-color;
 	}
 }
 
