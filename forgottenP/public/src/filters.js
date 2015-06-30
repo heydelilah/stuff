@@ -9,7 +9,6 @@ angular.module('MemoryApp')
 	.filter('camelCase', function(){
 		return function(name){
 			// First Name -> firstName
-			console.log(name)
 			return name.toLowerCase().replace(/ (\w)/g, function(match, letter){
 				return letter.toUpperCase();
 			})
@@ -33,4 +32,23 @@ angular.module('MemoryApp')
 			// }
 			return result;
 		}
+	})
+
+	// 分类id 转为文字
+	.filter('catecoryText', function(options){
+		return function(id, name){
+			var result = '';
+
+			if(name== 'category'){
+				var list = options.category;
+				for (var i = 0; i < list.length; i++) {
+					if(list[i].id === id){
+						id = list[i].name;
+					}
+				};
+			}
+			return id;
+
+		}
+
 	})

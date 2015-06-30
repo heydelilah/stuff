@@ -18,7 +18,7 @@
 	<tbody>
 		<tr ng-repeat="record in records | filter: query | orderBy: sort.field:sort.order">
 			<td  ng-click="show(record.id)" ng-repeat="field in fields">
-				{{record[field][0]}}
+				{{record[field][0] | catecoryText: field}}
 			</td>
 		</tr>
 		

@@ -36,5 +36,16 @@ angular.module('MemoryApp', ['ngRoute', 'ngResource', 'ngMessages'])
 			"desc",
 			"category",
 			"level"
+		],
+		"category":[
+			{id: 1, name: "Email"},
+			{id: 2, name: "通讯"},
+			{id: 3, name: "社区"},
+			{id: 4, name: "理财"},
+			{id: 5, name: "旅游"},
+			{id: 6, name: "应聘"},
+			{id: 7, name: "音乐"},
+			{id: 8, name: "租房"},
+			{id: 0, name: "其他"}
 		]
 	})

@@ -9,7 +9,6 @@ angular.module('MemoryApp')
 
 		// 列显示域
 		$scope.fields = ['name', 'password'].concat(options.display_field);
-		console.log($scope.fields)
 
 		// 排序
 		$scope.sort = function(field){
@@ -20,12 +19,20 @@ angular.module('MemoryApp')
 		$scope.sort.order = false;
 
 		$scope.show = function(id){
-			$location.url('record/'+id);
+			$location.url('records/'+id);
 		}
 	})
 
-	.controller('AddController', function($scope, $rootScope, Memory, $location){
+	.controller('AddController', function($scope, $rootScope, Memory, $location, options){
 		$rootScope.PAGE = 'add';
+
+		// 类型
+		$scope.categories = options.category;
+		// 当前选择的类型
+		$scope.category = $scope.categories[0];
+		console.log($scope.category)
+
+		$scope.levels = ['high','normal','lower'];
 
 		// 新建一条记录
 		$scope.data = new Memory({
@@ -34,7 +41,7 @@ angular.module('MemoryApp')
 			desc: ['', 'text'],
 			category: ['', 'number'],
 			date: ['', 'date'],
-			level: ['', 'text']
+			level: ['high', 'text']
 		});
 
 		$scope.save = function(){
@@ -47,6 +54,10 @@ angular.module('MemoryApp')
 			if($scope.newRecord.$invalid){
 				$scope.$broadcast('data:invalid')
 			}else{
+
+				// 保存类型
+				$scope.data.category[0] = $scope.category.id;	
+				
 				$scope.data.$save();
 				$location.url('/record');
 			}
