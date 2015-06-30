@@ -1,19 +1,19 @@
-angular.module('ContactsApp', ['ngRoute', 'ngResource', 'ngMessages'])
+angular.module('MemoryApp', ['ngRoute', 'ngResource', 'ngMessages'])
 	
 	.config(function($routeProvider, $locationProvider){
 		$routeProvider
 			// 联系人列表
-			.when('/contacts', {
+			.when('/records', {
 				controller: 'ListController',
 				templateUrl: 'views/list.html'
 			})
 			// 新增联系人
-			.when('/contacts/add', {
+			.when('/records/add', {
 				controller: 'AddController',
 				templateUrl: 'views/add.html'
 			})
 			// 编辑
-			.when('/contacts/:id', {
+			.when('/records/:id', {
 				controller: 'EditController',
 				templateUrl: 'views/edit.html'
 			})
@@ -23,7 +23,7 @@ angular.module('ContactsApp', ['ngRoute', 'ngResource', 'ngMessages'])
 				templateUrl: 'views/setting.html'
 			})
 			.otherwise({
-				redirectTo: '/contacts'   
+				redirectTo: '/records'   
 			});
 
 		// ? 和hash相关

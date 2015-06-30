@@ -1,17 +1,17 @@
 <h2> Add</h2>
 
 <!-- 注意：这里的name赋值非常重要 -->
-<form class="form-horizontal" name="newContact">
+<form class="form-horizontal" name="newRecord">
 
 	<!-- form-field 是自定义的标签 -->
-	<form-field record="record" field="name" live="false" required="true"></form-field>
+	<form-field data="data" field="name" live="false" required="true"></form-field>
 
-	<form-field record="record" field="password" live="false" required="true"></form-field>
+	<form-field data="data" field="password" live="false" required="true"></form-field>
 
-	<form-field ng-repeat="(k, v) in record | fieldFilter: 'name'| fieldFilter: 'password'" record="record" field="{{k}}" live="false"></form-field>
+	<form-field ng-repeat="(k, v) in data | fieldFilter: 'name'| fieldFilter: 'password'" data="data" field="{{k}}" live="false"></form-field>
 
 	<!-- 新增项目 -->
-	<new-field record="record" live="false"></new-field>
+	<new-field data="data" live="false"></new-field>
 
 
 

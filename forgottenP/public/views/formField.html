@@ -14,12 +14,12 @@
 	<div ng-switch="required" class="col-sm-6">
 		<!-- 必填项 -->
 		<!-- @疑问：为何这里type 又要用{{}}把它包起来？ -->
-		<input ng-switch-when="true" ng-model="record[field][0]" type="{{record[field][1]}}" ng-change="update()" ng-blur="blurUpdate()" required class="form-control">
+		<input ng-switch-when="true" ng-model="data[field][0]" type="{{data[field][1]}}" ng-change="update()" ng-blur="blurUpdate()" required class="form-control">
 		
 		<!-- 非必填项 -->
 		<div ng-switch-default class="input-group">
 			<!-- 输入框 -->
-			<input ng-model="record[field][0]" type="{{record[field][1]}}" ng-change="update()" ng-blur="blurUpdate()" class="form-control">
+			<input ng-model="data[field][0]" type="{{data[field][1]}}" ng-change="update()" ng-blur="blurUpdate()" class="form-control">
 			
 			<!-- 删除按钮 -->
 			<span class="input-group-btn">

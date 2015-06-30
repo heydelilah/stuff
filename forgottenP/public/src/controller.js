@@ -1,11 +1,11 @@
-angular.module('ContactsApp')
-	.controller('ListController', function($scope, $rootScope, Contact, $location, options){
+angular.module('MemoryApp')
+	.controller('ListController', function($scope, $rootScope, Memory, $location, options){
 		$rootScope.PAGE = 'all';
 
 		// 疑问： 这里的query对应什么？
 		// 获取了全部的记录	
 		// 'query':  {method:'GET', isArray:true}
-		$scope.contacts = Contact.query();
+		$scope.records = Memory.query();
 
 		// 列显示域
 		$scope.fields = ['name', 'password'].concat(options.display_field);
@@ -20,15 +20,15 @@ angular.module('ContactsApp')
 		$scope.sort.order = false;
 
 		$scope.show = function(id){
-			$location.url('contacts/'+id);
+			$location.url('record/'+id);
 		}
 	})
 
-	.controller('AddController', function($scope, $rootScope, Contact, $location){
+	.controller('AddController', function($scope, $rootScope, Memory, $location){
 		$rootScope.PAGE = 'add';
 
 		// 新建一条记录
-		$scope.record = new Contact({
+		$scope.data = new Memory({
 			name: ['', 'text'],
 			password: ['', 'text'],
 			desc: ['', 'text'],
@@ -44,27 +44,27 @@ angular.module('ContactsApp')
 					$invalid 不知道哪里来的？
 					$broadcast的详细用法？
 			*/
-			if($scope.newContact.$invalid){
-				$scope.$broadcast('record:invalid')
+			if($scope.newRecord.$invalid){
+				$scope.$broadcast('data:invalid')
 			}else{
-				$scope.record.$save();
-				$location.url('/contacts');
+				$scope.data.$save();
+				$location.url('/record');
 			}
 		}
 	})
 
-	.controller('EditController', function($scope, $rootScope, Contact, $location, $routeParams){
+	.controller('EditController', function($scope, $rootScope, Memory, $location, $routeParams){
 		$rootScope.PAGE = 'edit';
 
 		var param = parseInt($routeParams.id, 10);
 
 		// 不是异步的吗？
-		$scope.record = Contact.get({id: param});
+		$scope.data = Memory.get({id: param});
 
 
 		$scope.remove = function(){
-			$scope.record.$delete();
-			$location.url('/contacts');
+			$scope.data.$delete();
+			$location.url('/record');
 		}
 	})
 
@@ -86,8 +86,6 @@ angular.module('ContactsApp')
 			}else{
 				options.display_field.splice(i, 1);
 			}
-
-			console.log($scope.fields)
 
 		}
 	})

@@ -1,4 +1,4 @@
-angular.module('ContactsApp')
+angular.module('MemoryApp')
 	.filter('labelCase', function(){
 		return function(name){
 			// firstName -> First Name

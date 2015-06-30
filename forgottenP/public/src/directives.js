@@ -1,4 +1,4 @@
-angular.module('ContactsApp')
+angular.module('MemoryApp')
 	.value('FieldTypes', {
 		text: ['Text', 'should be text'],
 		email: ['Email', 'should be an email address'],
@@ -20,7 +20,7 @@ angular.module('ContactsApp')
 			templateUrl: 'views/formField.html',
 			replace: true,	// 是否替换
 			scope: {
-				record: '=',
+				data: '=',
 				field: '@',
 				live: '@',
 				required: '@'
@@ -28,8 +28,8 @@ angular.module('ContactsApp')
 			link: function($scope, element, attr){
 
 				// 消息的格式是固定这样的吗？
-				$scope.$on('record:invalid', function(){
-					// 这里的调用很奇怪？为何不是$scope.record[field];
+				$scope.$on('data:invalid', function(){
+					// 这里的调用很奇怪？为何不是$scope.data[field];
 					// 这里引用的是ng-form; ng-form="{{field}}"
 					$scope[$scope.field].$setDirty();
 				})
@@ -37,7 +37,7 @@ angular.module('ContactsApp')
 				$scope.types = FieldTypes;
 
 				$scope.remove = function(field){
-					delete $scope.record[field];
+					delete $scope.data[field];
 					$scope.blurUpdate();
 				}
 
@@ -45,9 +45,8 @@ angular.module('ContactsApp')
 					if($scope.live !== 'false'){
 						// BUG: 编辑时候得快速编写，不然会更新失败然后被返回的null覆盖；
 						// 有error时候，应该禁用更新
-						$scope.record.$update(function(updateRecord){
-							console.log(updateRecord)
-							$scope.record = updateRecord;
+						$scope.data.$update(function(updateRecord){
+							$scope.data = updateRecord;
 						});	
 					}
 				}
@@ -67,7 +66,7 @@ angular.module('ContactsApp')
 			templateUrl: 'views/newField.html',
 			replace: true,
 			scope: {
-				record: '=',
+				data: '=',
 				live: '@'
 			},
 			// @疑问：没搞懂？
@@ -91,13 +90,13 @@ angular.module('ContactsApp')
 					// 合法性验证
 					if(form.newField.$valid){
 						var name = $filter('camelCase')($scope.field.name);
-						$scope.record[name] = [$scope.field.value, $scope.field.type];
+						$scope.data[name] = [$scope.field.value, $scope.field.type];
 						$scope.remove();
 
 						if($scope.live !== 'false'){
 							// 更新数据库
-							$scope.record.$update(function(updatedRecord){
-								$scope.record = updatedRecord;
+							$scope.data.$update(function(updatedRecord){
+								$scope.data = updatedRecord;
 							});
 						}
 

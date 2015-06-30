@@ -14,11 +14,12 @@ router.use(bodyParser.json());
 
 // 设计路由
 
-router.route('/contact')
+router.route('/record')
 	// 获取全部记录
 	.get(function(req, res){
         db.find(function(err, data){
-			res.json(data)
+			res.json(data);
+			console.log(data)
 		});
 	})
 	// 新建一条记录
@@ -38,7 +39,7 @@ router
 		next();
 	})
 
-	.route('/contact/:id')
+	.route('/record/:id')
 	
 	// 获取单条记录
 	.get(function(req, res){

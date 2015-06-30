@@ -1,10 +1,10 @@
-angular.module('ContactsApp')
+angular.module('MemoryApp')
 	
 	/*
 		疑问：
-			factory， 这里的 Contact 可以理解为一个构造器吗？	
+			factory， 这里的 Memory 可以理解为一个构造器吗？	
 	 */
-	.factory('Contact', function($resource){
+	.factory('Memory', function($resource){
 
 		/*
 			$resource的用法：
@@ -18,20 +18,20 @@ angular.module('ContactsApp')
 				取不到值
 
 		 */
-		return $resource('/api/contact/:id', {id: '@id'}, {
+		return $resource('/api/record/:id', {id: '@id'}, {
 			'update': {method: 'PUT'}
 		})
 	})
 
 
-	.factory('Fields', function($q, $http, Contact){
+	.factory('Fields', function($q, $http, Memory){
 		var url="/options/display_field",
 			allFields = [];
 			ignore = ['name', 'password', 'id'];
 
 		var deferred = $q.defer();
 
-		var records = Contact.query(function(){
+		var records = Memory.query(function(){
 
 			records.forEach(function(c){
 

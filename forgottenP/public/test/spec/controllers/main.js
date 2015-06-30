@@ -1,9 +1,9 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: ListController', function () {
 
   // load the controller's module
-  beforeEach(module('ContactsApp'));
+  beforeEach(module('MemoryApp'));
 
   var MainCtrl,
     scope;

@@ -1,18 +1,18 @@
 <h2>
-	{{record.name[0]}}
-	{{record.password[0]}}
+	{{data.name[0]}}
+	{{data.password[0]}}
 </h2>
 
 <form class='form-horizontal' name="editForm">
 	
-	<form-field record="record" field="name" required></form-field>
-	<form-field record="record" field="password" required></form-field>
-	<form-field record="record" ng-repeat="(k, v) in record | fieldFilter: 'password' |fieldFilter: 'name' |fieldFilter:'id' " field="{{k}}" required></form-field>
+	<form-field data="data" field="name" required></form-field>
+	<form-field data="data" field="password" required></form-field>
+	<form-field data="data" ng-repeat="(k, v) in data | fieldFilter: 'password' |fieldFilter: 'name' |fieldFilter:'id' " field="{{k}}" required></form-field>
 
 
-	<form-field record="record" ng-repeat="(k, v) in types" field="{{k}}"></form-field>
+	<form-field data="data" ng-repeat="(k, v) in types" field="{{k}}"></form-field>
 
-	<new-field record="record"></new-field>
+	<new-field data="data"></new-field>
 
 	<div class="row form-group">
 		<div class="col-sm-offset-2">
