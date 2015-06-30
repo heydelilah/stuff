@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ContactsApp">
+<head>
+	<meta charset="UTF-8">
+	<title>forgotten</title>
+
+	<!-- angular 基本路径设置 -->
+	<base href="/" >
+	
+	<!-- 引进bootswatch中的css样式 -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+
+	<div class='container'>
+		<div class='page-header'>
+			<h1> Forgotten * </h1>
+		</div>
+		<div class="row">
+			<div class="col-sm-12" ng-include="'views/nav.html'"></div>
+		</div>
+		<div class='row'>
+			<div class='col-sm-12' ng-view></div>
+		</div>
+	</div>
+
+
+	
+	<!-- 引进bootstap js -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+	<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+
+	<script src="src/app.js"></script>
+	<script src="src/controller.js"></script>
+	<script src="src/factories.js"></script>
+	<script src="src/directives.js"></script>
+	<script src="src/filters.js"></script>
+	
+</body>
+</html>

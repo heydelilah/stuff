@@ -1,0 +1,24 @@
+<h2> Add</h2>
+
+<!-- 注意：这里的name赋值非常重要 -->
+<form class="form-horizontal" name="newContact">
+
+	<!-- form-field 是自定义的标签 -->
+	<form-field record="record" field="name" live="false" required="true"></form-field>
+
+	<form-field record="record" field="password" live="false" required="true"></form-field>
+
+	<form-field ng-repeat="(k, v) in record | fieldFilter: 'name'| fieldFilter: 'password'" record="record" field="{{k}}" live="false"></form-field>
+
+	<!-- 新增项目 -->
+	<new-field record="record" live="false"></new-field>
+
+
+
+
+	<div class="row form-group">
+		<div class="col-sm-offset-2">
+			<button class="btn btn-primary" ng-click="save()">Add</button>
+		</div>
+	</div>
+</form>

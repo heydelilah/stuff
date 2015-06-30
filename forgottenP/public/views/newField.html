@@ -1,0 +1,45 @@
+<div>
+	
+	<!-- 显示区 -->
+		<div ng-if="display" ng-form="newField">
+			<!-- @疑问： 为何ng-model里面不需要加{{}}, 但是type属性要？ -->
+			<!-- 标签名称 -->
+			<div class="col-sm-2">
+				<input type="text" class="form-control" ng-model="field.name" required placeholder="name">
+			</div>
+			<!-- 输入框 -->
+			<div class="col-sm-6">
+				<input type="{{field.type}}" class="form-control" ng-model="field.value" placeholder="value">
+
+			</div>
+			<!-- 按钮区 -->
+			<div class="col-sm-4">
+				<button class="btn btn-primary" ng-click="add()">Add</button>
+				<button class="btn btn-primary" ng-click="remove()">Remove</button>	
+			</div>
+		</div>	
+
+	<!-- 下拉框 -->
+		<div class="form-group row">
+			<!-- data-toggle怎么回事？ -->
+			<div class="btn-group col-sm-offset-2 dropup">
+				<button class="btn dropdown-toggle" data-toggle="dropdown">
+					add new field
+					<span class="caret"></span>
+				</button>
+				
+				<ul class="dropdown-menu">
+					<li ng-repeat="(k, v) in types">
+						<a ng-click="show(k)">
+							{{v[0]}}
+						</a>
+					</li>
+					
+				</ul>
+			</div>
+
+		</div>
+
+
+
+</div>

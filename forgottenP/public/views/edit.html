@@ -1,0 +1,22 @@
+<h2>
+	{{record.name[0]}}
+	{{record.password[0]}}
+</h2>
+
+<form class='form-horizontal' name="editForm">
+	
+	<form-field record="record" field="name" required></form-field>
+	<form-field record="record" field="password" required></form-field>
+	<form-field record="record" ng-repeat="(k, v) in record | fieldFilter: 'password' |fieldFilter: 'name' |fieldFilter:'id' " field="{{k}}" required></form-field>
+
+
+	<form-field record="record" ng-repeat="(k, v) in types" field="{{k}}"></form-field>
+
+	<new-field record="record"></new-field>
+
+	<div class="row form-group">
+		<div class="col-sm-offset-2">
+			<button class="btn btn-danger" ng-click="remove()">Delete</button>
+		</div>
+	</div>
+</form>
