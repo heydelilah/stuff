@@ -97,7 +97,6 @@ angular.module('MemoryApp')
 			}else{
 				options.display_field.splice(i, 1);
 			}
-
 		}
 	})
 

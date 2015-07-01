@@ -13,13 +13,11 @@ var router = express.Router();
 router.use(bodyParser.json());
 
 // 设计路由
-
 router.route('/record')
 	// 获取全部记录
 	.get(function(req, res){
-        db.find(function(err, data){
+		db.find(function(err, data){
 			res.json(data);
-			console.log(data)
 		});
 	})
 	// 新建一条记录
@@ -66,6 +64,29 @@ router
 		db.delete(req.dbQuery, function(){
 			res.json(null)
 		})
+	})
+
+// 下载文件
+router.route('/download')
+	.get(function(req, res){
+		db.find(function(err, data){
+			var result = [];
+			var val;
+
+			for (var i = 0; i < data.length; i++) {
+				val = data[i];
+				result.push({
+					id: val.id,
+					name: val.name[0],
+					password: val.password[0],
+					category: val.category[0],
+					level: val.level && val.level[0] || '',
+					desc: val.desc[0]
+				})
+			};
+			res.attachment('data.json');
+			res.send(result)
+		});
 	})
 
 
