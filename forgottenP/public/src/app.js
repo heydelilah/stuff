@@ -28,8 +28,8 @@ angular.module('MemoryApp', ['ngRoute', 'ngResource', 'ngMessages'])
 
 		// ? 和hash相关
 		$locationProvider.html5Mode(true);
-
 	})
+
 	// 设置全局变量
 	.value('options', {
 		"display_field": [
@@ -47,5 +47,23 @@ angular.module('MemoryApp', ['ngRoute', 'ngResource', 'ngMessages'])
 			{id: 7, name: "音乐"},
 			{id: 8, name: "租房"},
 			{id: 0, name: "其他"}
-		]
+		],
+		"i18n": 'cn', // 'en', 'cn'
+		"translation": {
+			'All Password': '全部密码',
+			'New Password': '新建密码',
+			'Name': '名称',
+			'Password': '密码',
+			'Desc': '描述',
+			'Category': '类别',
+			'Level': '等级',
+			'Setting': '设置',
+			'Display Column': '选择要显示的列',
+			'Download': '下载',
+			'Download as JSON file': '下载 JSON 文件',
+			'Add': '新建'
+		}
 	})
+
+
+

@@ -1,13 +1,13 @@
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<ul class="nav navbar-nav">
-			<li ng-class="{active: PAGE=='all'}"><a href="/records">All Password</a></li>
-			<li ng-class="{active: PAGE=='add'}"><a href="/records/add"> New Password</a></li>
+			<li ng-class="{active: PAGE=='all'}"><a href="/records">{{ 'All Password' |  LANG }}</a></li>
+			<li ng-class="{active: PAGE=='add'}"><a href="/records/add"> {{ 'New Password' | LANG}}</a></li>
 		</ul>
 		
 		<!-- 登出 -->
 		<ul class="nav navbar-nav navbar-right">
-			<li ng-class="{active: PAGE=='setting'}"><a href="/setting">Setting</a></li>
+			<li ng-class="{active: PAGE=='setting'}"><a href="/setting">{{ 'Setting' | LANG}}</a></li>
 		</ul>
 	</div>
 

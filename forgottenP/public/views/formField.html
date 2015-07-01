@@ -4,7 +4,7 @@
 	<!-- 项目名称 -->
 	<label class="col-sm-2 control-label">
 		<!-- @todo: 差一个filter -->
-		{{field | labelCase}}
+		{{field | labelCase  | LANG}}
 		<!-- 星号 -->
 		<span ng-if="required">*</span>
 	</label>

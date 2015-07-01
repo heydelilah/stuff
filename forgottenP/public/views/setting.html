@@ -1,15 +1,15 @@
-<h2>Display Column</h2>
+<h2>{{'Display Column' | LANG }} </h2>
 
 <div class="checkbox" ng-repeat="field in allFields">
 	<label>
 		<input type="checkbox" value="{{field}}" ng-checked="{{fields.indexOf(field)>=0}}" ng-click="toggle(field)">
-		{{field| labelCase}}
+		{{field| labelCase |LANG}}
 	</label>
 </div>
 
 
-<h2>Download</h2>
+<h2>{{'Download' | LANG }}</h2>
 
 <form action="/api/download" method="GET">
-	<button class="btn btn-primary" type="submit">Download as JSON file</button>
+	<button class="btn btn-primary" type="submit">{{'Download as JSON file' | LANG}}</button>
 </form>

@@ -84,11 +84,15 @@ router.route('/download')
 					desc: val.desc[0]
 				})
 			};
-			res.attachment('data.json');
+
+			// 格式化文件命名
+			var date = new Date();
+			var time = ''+date.getFullYear() + date.getMonth() + date.getDate();
+			
+			res.attachment('PWD_Memory_'+time+'.json');
 			res.send(result)
 		});
 	})
-
 
 // 导出
 module.exports = router;

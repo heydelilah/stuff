@@ -30,7 +30,6 @@ angular.module('MemoryApp')
 		$scope.categories = options.category;
 		// 当前选择的类型
 		$scope.category = $scope.categories[0];
-		console.log($scope.category)
 
 		$scope.levels = ['high','normal','lower'];
 
@@ -40,7 +39,6 @@ angular.module('MemoryApp')
 			password: ['', 'text'],
 			desc: ['', 'text'],
 			category: ['', 'number'],
-			date: ['', 'date'],
 			level: ['high', 'text']
 		});
 
@@ -64,18 +62,49 @@ angular.module('MemoryApp')
 		}
 	})
 
-	.controller('EditController', function($scope, $rootScope, Memory, $location, $routeParams){
+	.controller('EditController', function($scope, $rootScope, Memory, $location, $routeParams, options){
 		$rootScope.PAGE = 'edit';
+
+		// 类型
+		$scope.categories = options.category;
+
+		$scope.levels = ['high','normal','lower'];
+
 
 		var param = parseInt($routeParams.id, 10);
 
-		// 不是异步的吗？
-		$scope.data = Memory.get({id: param});
+		$scope.data = Memory.get({id: param}, function(data){
+			// 当前选择的类型
+			var cid = $scope.data.category[0];
 
+			// 循环，找出id相等的那个对象
+			for (var i = 0; i < $scope.categories.length; i++) {
+				if($scope.categories[i].id == cid){
+					$scope.category = $scope.categories[i];
+				}
+			};
+		});
 
 		$scope.remove = function(){
 			$scope.data.$delete();
 			$location.url('/record');
+		}
+
+		$scope.blurUpdate = function(){
+			if($scope.live !== 'false'){
+
+				$scope.data.category[0] = $scope.category.id;
+
+				$scope.data.$update(function(updateRecord){
+					$scope.data = updateRecord;
+				});	
+			}
+		}
+
+		var timeoutId;
+		$scope.update = function(){
+			$timeout.cancel(timeoutId);
+			timeoutId = $timeout($scope.blurUpdate, 1000);
 		}
 	})
 

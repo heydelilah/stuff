@@ -50,5 +50,16 @@ angular.module('MemoryApp')
 			return id;
 
 		}
+	})
 
+	// 语言转化
+	.filter('LANG', function(options){
+		return function(value){
+			var result = '';
+
+			if(options.i18n == 'cn'){
+				result = options.translation[value] || value;
+			}
+			return result;
+		}
 	})
