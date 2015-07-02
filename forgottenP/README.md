@@ -11,7 +11,8 @@
 
 # 启动
 
-`node server.js`
+－ `npm install`, `bower install` 下载完相关依赖；
+－ `node server.js`
 
 # 说明
 
@@ -21,6 +22,10 @@
 
 关于中英切换功能，做了个简单版本，比较傻的实现，但可用。
 
+单元测试仅能跑得通，没有怎么写测试用例... 
+
+涉及： Angular, Bootstrap, LESS, Karma, Jquery, Nodejs, Express, Bourne;
+
 # Bug
 
-第一次使用时候的第一条记录可能有问题，id 为 null, 没去 debug，手动改了它；
+第一次使用时候的第一条记录可能有问题，id 为 null, 手动改了它；
