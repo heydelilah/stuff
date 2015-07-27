@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS布局Demo</title>
+	<link rel="stylesheet" href="base.css">
+</head>
+<body>
+
+	<style>
+		.header{
+			height: 100px;
+		}
+		.column-a{
+			width: 200px;
+			position: absolute;
+			top: 100;
+			left: 0;
+		}
+		.column-b{
+			width: 200px;
+			position: absolute;
+			top: 100;
+			right: 0;
+		}
+		.column-c{
+			margin-right: 220px;
+			margin-left: 220px;
+		}
+
+	</style>
+
+	<a href="index.html" class="back" title="Back">&#9776</a>
+	
+	<div class="header">
+		<h3>左右两侧固宽，中间自适应的三列布局</h3>
+		<p>使用绝对定位</p>
+	</div>
+
+	<div class="demo">
+		<div class="column-a blue">Column1
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cum cupiditate quidem tempore adipisci atque repellendus qui, culpa aut, possimus amet quibusdam eveniet aspernatur iusto at ad voluptatum aliquam tenetur.</p>
+		</div>
+		<div class="column-b green">
+			Column2
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cum cupiditate quidem tempore adipisci atque repellendus qui, culpa aut, possimus amet quibusdam eveniet aspernatur iusto at ad voluptatum aliquam tenetur.</p>
+		</div>
+		<div class="column-c pink">
+			<h3>Column3</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cum cupiditate quidem tempore adipisci atque repellendus qui, culpa aut, possimus amet quibusdam eveniet aspernatur iusto at ad voluptatum aliquam tenetur.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cum cupiditate quidem tempore adipisci atque repellendus qui, culpa aut, possimus amet quibusdam eveniet aspernatur iusto at ad voluptatum aliquam tenetur.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cum cupiditate quidem tempore adipisci atque repellendus qui, culpa aut, possimus amet quibusdam eveniet aspernatur iusto at ad voluptatum aliquam tenetur.</p>
+
+		</div>
+	</div>
+
+	
+</body>
+</html>

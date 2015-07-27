@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Outline</title>
+	<link rel="stylesheet" href="base.css">
+</head>
+<body class="outline">
+
+	<h3>CSS 布局 Demo</h3>
+	
+	<ol>
+		<li>
+			<a href="fixedLeftAdaptiveRight.html">两列 － 左侧固定，右侧自适应</a>
+			<p>左侧固宽左浮，右侧设置固宽左边距</p>
+		</li>
+		<li>
+			<a href="fixedRightAdaptiveLeft.html">两列 － 右侧定宽，左侧自适应</a>
+			<p></p>
+		</li>
+		<li>
+			<a href="twoColumnEqualHeight.html">两列 － 等宽等高</a>
+			<p>方案一：利用视觉。外部包一个容器，背景色设置为右侧列的底色，视觉上感觉两个盒子是等高的。</p>
+			<p>方案二：利用js，获取左侧高度后，再重绘右侧高度。要监测浏览器窗口的大小改变，更新高度值。而且如果有边距的话，还得减掉...</p>
+		</li>
+		<li>
+			<a href="fixedRightAdaptiveMiddle.html">三列 － 右侧定宽，中间自适应</a>
+			<p>使用绝对定位。左侧向左定位，右侧向右定位，中间设置左右边距等于左右侧栏的宽度。</p>
+		</li>
+		<li>
+			<a href="threeAdaptiveColumm.html">三列自适应</a>
+			<p>三列都左浮动，使用百分比固定宽度</p>
+		</li>	
+	</ol>
+
+
+</body>
+</html>

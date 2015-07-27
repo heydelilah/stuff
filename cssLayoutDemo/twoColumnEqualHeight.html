@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS布局Demo</title>
+	<link rel="stylesheet" href="base.css">
+</head>
+<body>
+
+	<style>
+		.column-a{
+			width: 400px;
+			float: left;
+		}
+		.column-b{
+			width: 400px;
+			float: left;
+		}
+		.wrapper{
+			overflow: hidden;
+		}
+	</style>
+
+	<a href="index.html" class="back" title="Back">&#9776</a>
+
+	<div class="header">
+		<h3>两列等宽等高</h3>
+		<p>方案一：利用视觉。外部包一个容器，背景色设置为右侧列的底色，视觉上感觉两个盒子是等高的。</p>
+	</div>
+	
+	<div class="demo green wrapper">
+		<div class="column-a blue">Column1: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ipsa neque laudantium dignissimos, a, molestiae tempora itaque doloremque enim maxime error libero rem, ea laborum reiciendis dicta sequi quia culpa!</div>
+		<div class="column-b ">Column2: short </div>
+		
+	</div>
+
+	<div class="header">
+		<p>方案二：利用js，获取左侧高度后，再重绘右侧高度。要监测浏览器窗口的大小改变，更新高度值。而且如果有边距的话，还得减掉...</p>
+	</div>
+	
+	<div class="demo wrapper">
+		<div id="a" class="column-a blue">Column1: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ipsa neque laudantium dignissimos, a, molestiae tempora itaque doloremque enim maxime error libero rem, ea laborum reiciendis dicta sequi quia culpa!</div>
+		<div id="b" class="column-b green">Column2: short </div>	
+	</div>
+
+	<script>
+		// 更新高度
+		function updateHeight () {
+			var columnA = document.getElementById('a');
+			var height = columnA.clientHeight;
+			var columnB = document.getElementById('b');
+			var padding = 20;
+			columnB.style.height = (height-padding)+"px";
+		}
+
+		updateHeight();
+
+		// 监测浏览器窗口大小变化
+		window.onresize = updateHeight;
+
+	</script>
+	
+</body>
+</html>

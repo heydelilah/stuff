@@ -16,15 +16,13 @@
 
 # 说明
 
-数据存储是使用 Bourne 模拟数据库； JSON 格式；
-
-导出功能，暂只支持导出 JSON 形式； 
-
-关于中英切换功能，做了个简单版本，比较傻的实现，但可用。
-
-单元测试仅能跑得通，没有怎么写测试用例... 
-
-涉及： Angular, Bootstrap, LESS, Karma, Jquery, Nodejs, Express, Bourne;
+- 数据存储是使用 Bourne 模拟数据库； JSON 格式；
+- 导出功能，暂只支持导出 JSON 形式； 
+- 关于中英切换功能，做了个简单版本，比较傻的实现，但可用；
+- 单元测试仅能跑得通，没有怎么写测试用例... 
+	1. 在 test 目录下，启动：`karma start`;
+	2. 依赖：`angular-mocks`, `phantomjs`, `jasmine`
+- 涉及： Angular, Bootstrap, LESS, Karma, Jquery, Nodejs, Express, Bourne;
 
 # Bug
 
