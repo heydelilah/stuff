@@ -6,4 +6,15 @@
 - 三列 － 右侧定宽，中间自适应
 - 三列自适应
 
-demo: https://github.com/heydelilah/stuff/cssLayoutDemo/index.html
+Live demo: http://heydelilah.github.io/stuff/cssLayoutDemo/index.html
+
+Todo:
+
+- display: flex
+	- 如何使用？
+	- 兼容性？
+
+- table-flex
+	- 是什么？
+
+- 瀑布流布局
